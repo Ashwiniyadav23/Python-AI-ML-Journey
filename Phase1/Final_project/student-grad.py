@@ -49,3 +49,36 @@ s1 = Student("Ashwini")
 s1.add_grade(85)
 s1.add_grade(90)
 s1.display()
+
+
+
+
+# Step 4: Build a manager class to hold all students
+
+
+class GrandeManager:
+    def __init__(self):
+        self.students = []  # will hold students objects
+
+    def add_student(self,name):
+        student = Students(name)
+        self.students.append(student)
+        return student
+    def find_student(self, name):
+        for student in self.students:
+            if student.name.lower() == name.lower(): # case-insensitive match
+                return student
+        return None # not found
+    
+    def display_all(self):
+        if not self.students:
+            print("No students added yet.")
+            return
+        for student in self.students:
+            student.display()
+
+    def top_student(self):
+        if not self.students:
+            return None
+        return max(self.students, key=lambda s: s.average())
+        
