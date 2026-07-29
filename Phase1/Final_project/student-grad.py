@@ -82,3 +82,43 @@ class GrandeManager:
             return None
         return max(self.students, key=lambda s: s.average())
         
+# Step 5: Add a menu — make it interactive
+
+
+def main():
+    manager = grandeManager()
+    while True:
+        print("\n--- Student Grade Manager ---")
+        print("1. Add student")
+        print("2. Add student grade")
+        print("3. View All students")
+        print("4. Show top student")
+        print("5. Exit......")
+        choice = input("Choose an option:")
+        if choice == "1":
+            name = input("Enter student name:")
+            manager.add_student(name)
+            print(f"{name} added.")
+        elif choice == "2":
+            name = input("Enter student name: ")
+            student =  manager.find_student(name)
+            if student is None:
+                print("Student Not found")
+            else:
+                grade = int(input("Enter grade: "))
+                student.add_grade(grade)
+                print(f"Grade {grade} added to {name}")
+            elif choice == "3":
+                manager.display_all()
+            elif choice == "4":
+                top = manager.top_student()
+                if top is None:
+                    print("No students yet")
+                else:
+                    print(f"Top student: {top.name} with average {top.average}:.2f")
+            elif choice == "5":
+                print("Goodbye!")
+                break
+            else:
+                print("Invalid choice, try again.")
+main()
