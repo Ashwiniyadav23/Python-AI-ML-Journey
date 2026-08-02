@@ -1,7 +1,0 @@
-def add(a, b):
-    return a + b
-
-def square(x):
-    return x * x
-
-PI = 3.14159
