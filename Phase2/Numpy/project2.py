@@ -32,3 +32,13 @@ A = np.array([90, 60, 40, 87, 95, 12])
 # 1 = Has Backlog
 B = np.array([1, 0, 1, 0, 0, 1])
 
+
+
+# 1st problem
+
+qualified = (M >= 75) & (A >= 85) & (B == 0)
+print(qualified)
+count = np.sum(qualified)
+print("Qualified Students:", count)
+
+
