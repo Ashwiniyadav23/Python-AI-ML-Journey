@@ -32,13 +32,41 @@ A = np.array([90, 60, 40, 87, 95, 12])
 # 1 = Has Backlog
 B = np.array([1, 0, 1, 0, 0, 1])
 
-
-
-# 1st problem
+# Problem 1
 
 qualified = (M >= 75) & (A >= 85) & (B == 0)
-print(qualified)
+
 count = np.sum(qualified)
+
 print("Qualified Students:", count)
 
+# Problem 2
 
+qualified_marks = M[qualified]
+
+print("\nQualified Students Marks:", qualified_marks)
+
+if qualified_marks.size > 0:
+    highest = np.max(qualified_marks)
+    lowest = np.min(qualified_marks)
+    average = np.mean(qualified_marks)
+
+    print("Highest:", highest)
+    print("Lowest:", lowest)
+    print("Average:", average)
+
+    # Problem 3
+
+    gold = qualified_marks[qualified_marks >= (highest - 5)]
+    silver = qualified_marks[
+        (qualified_marks >= average) &
+        (qualified_marks < (highest - 5))
+    ]
+    bronze = qualified_marks[qualified_marks < average]
+
+    print("\nGold Scholarship:", gold)
+    print("Silver Scholarship:", silver)
+    print("Bronze Scholarship:", bronze)
+
+else:
+    print("No qualified students.")
