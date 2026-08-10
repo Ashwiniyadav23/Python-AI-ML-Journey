@@ -1,9 +1,0 @@
-age = 19  # integer
-name = "Ashwini" # string
-height = 5.5 # float
-is_student = False # boolean
-score = None # NoneType (represents the absence of a value)
-scores = [85, 90, 78] # list
-scoret = (85, 90, 78) # tuple like a list but immutable
-scores_dict = {"math": 85, "science": 90, "english": 78} # dictionary
-scores_set = {85, 90, 78} # set (unordered collection of unique elements)
