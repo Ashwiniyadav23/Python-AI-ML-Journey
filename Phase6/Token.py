@@ -20,6 +20,7 @@ print(model.wv.most_similar("cat")) # words with the closest vectors
 # 3. Attention — letting a model focus on the most relevant words
 
 
+# pyrefly: ignore [missing-import]
 import numpy as np
 
 def simple_attention(query, keys, values):
