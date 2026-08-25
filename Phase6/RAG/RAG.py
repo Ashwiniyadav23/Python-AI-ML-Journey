@@ -1,4 +1,6 @@
+# pyrefly: ignore [missing-import]
 from sentence_transformers import SentenceTransformer
+# pyrefly: ignore [missing-import]
 import chromadb
 
 # -------------------------
